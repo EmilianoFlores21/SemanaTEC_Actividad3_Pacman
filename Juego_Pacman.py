@@ -122,7 +122,18 @@ def move():
                 vector(0, ghosts_speed),
                 vector(0, -ghosts_speed),
             ]
-            plan = choice(options)
+            if choice([0,1])==1:
+                #Moverse en x
+                if (point.x<pacman.x):
+                    print("choice x")
+                    plan=options[0]
+                else:
+                    plan=options[1]
+            else:
+                if (point.y<pacman.y):
+                    plan=options[2]
+                else:
+                    plan=options[3]
             course.x = plan.x
             course.y = plan.y
 
